@@ -82,11 +82,19 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold">Contact</h4>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 text-primary" /> +62 812-3456-7890
+              {/* Diperbaiki: Telepon menjadi link dan ditambah anti-error */}
+              <li className="flex items-center gap-2.5" suppressHydrationWarning>
+                <Phone className="h-4 w-4 text-primary" />
+                <a href="tel:+6281234567890" className="transition-colors hover:text-primary">
+                  +62 812-3456-7890
+                </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 text-primary" /> hello@xyrontech.id
+              {/* Diperbaiki: Email menjadi link dan ditambah anti-error */}
+              <li className="flex items-center gap-2.5" suppressHydrationWarning>
+                <Mail className="h-4 w-4 text-primary" />
+                <a href="mailto:hello@xyrontech.id" className="transition-colors hover:text-primary">
+                  hello@xyrontech.id
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> Jl. Teknologi No. 21,
@@ -97,7 +105,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Xyron Tech. All rights reserved.</p>
+          {/* Diperbaiki: Tanggal/Tahun dinamis diamankan dengan suppressHydrationWarning */}
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Xyron Tech. All rights reserved.</p>
           <p>
             Crafted with precision by <span className="text-gradient-brand font-semibold">Xyron</span>
           </p>

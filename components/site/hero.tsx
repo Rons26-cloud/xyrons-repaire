@@ -62,13 +62,17 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col gap-6"
         >
-          <span className="inline-flex w-fit items-center gap-2.5 rounded-full border border-border bg-white/5 px-4 py-2 text-sm text-muted-foreground backdrop-blur">
+          {/* Perubahan di sini: Mengubah span menjadi div & menambah anti-error extension */}
+          <div 
+            suppressHydrationWarning
+            className="inline-flex w-fit items-center gap-2.5 rounded-full border border-border bg-white/5 px-4 py-2 text-sm text-muted-foreground backdrop-blur"
+          >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Hello, I&apos;m
-          </span>
+            <span>Hello, I&apos;m</span>
+          </div>
 
           <div className="space-y-3">
             <h1 className="font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-6xl md:text-7xl">
